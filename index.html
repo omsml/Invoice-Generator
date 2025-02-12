@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="invoice-container">
+        <header class="invoice-header">
+            <div class="logo">
+                <img src="img/cocacola.png" alt="Company Logo">
+            </div>
+            <div class="invoice-info">
+              <p><strong>Date:</strong> <span id="invoice-date"></span></p>
+              <p><strong>Invoice #:</strong> <input type="text" value="BRA-XXXXX"></p>
+            </div>
+        </header>
+
+        <section class="company-details">
+            <div class="supplier">
+                <h3>Supplier Company INC</h3>
+                <p>Number: 23456789</p>
+                <p>GST: 23456789</p>
+                <p>Address: 6622 Abshire Mills, USA</p>
+            </div>
+            <div class="customer">
+                <h3>Customer Company</h3>
+                <p>Number: <input type="text" placeholder="Customer Number"></p>
+                <p>GST: <input type="text" placeholder="GST Number"></p>
+                <p>Address: <input type="text" placeholder="Customer Address"></p>
+            </div>
+        </section>
+
+        <table class="product-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Product Details</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th>GST</th>
+                    <th>Subtotal</th>
+                    <th>Total (Incl. GST)</th>
+                </tr>
+            </thead>
+            <tbody id="invoice-items">
+                <tr>
+                    <td>1</td>
+                    <td><input type="text" placeholder="Product Details"></td>
+                    <td><input type="number" placeholder="Price" class="price"></td>
+                    <td><input type="number" placeholder="Qty" class="qty"></td>
+                    <td><input type="number" placeholder="GST %" class="gst"></td>
+                    <td class="subtotal">$0.00</td>
+                    <td class="total">$0.00</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button id="add-product">Add Product</button>
+        <button id="print-invoice">Print Invoice</button>
+
+        <section class="totals">
+            <p><strong>Subtotal:</strong> <span id="subtotal">$0.00</span></p>
+            <p><strong>GST Total:</strong> <span id="gst-total">$0.00</span></p>
+            <p class="grand-total"><strong>Total:</strong> <span id="grand-total">$0.00</span></p>
+        </section>
+
+        <section class="payment-details">
+            <h3>Payment Details</h3>
+            <p>OFFLINE/CASH: <input type="text" placeholder="Maintion Online/Cash"></p>
+            <p>UPI ID: <input type="text" placeholder="UPI ID"></p>
+            <p>Payment UTR: <input type="text" placeholder="Payment UTR"></p>
+        </section>
+        
+
+        <section class="notes">
+            <h3>Notes</h3>
+            <p>Returns must include the original invoice and the product in its original condition with all packaging and accessories.</p>
+        </section>
+
+        <section class="signature">
+            <p>________________________</p>
+            <p>Authorized Signature</p>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
