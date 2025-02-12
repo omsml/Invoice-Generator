@@ -33,20 +33,18 @@ document.addEventListener("input", function () {
         const qty = parseInt(row.querySelector(".qty").value) || 0;
         const gst = parseFloat(row.querySelector(".gst").value) || 0;
 
-        const subtotal = price * qty; // Subtotal for each product
-        const gstAmount = (subtotal * gst) / 100; // GST calculation
-        const total = subtotal + gstAmount; // Total including GST
+        const subtotal = price * qty; 
+        const gstAmount = (subtotal * gst) / 100; 
+        const total = subtotal + gstAmount; 
 
         row.querySelector(".subtotal").textContent = `$${subtotal.toFixed(2)}`;
         row.querySelector(".total").textContent = `$${total.toFixed(2)}`;
 
-        // Update overall totals
         grandSubtotal += subtotal;
         grandGstTotal += gstAmount;
         grandTotal += total;
     });
 
-    // Update the totals section
     document.getElementById("subtotal").textContent = `$${grandSubtotal.toFixed(2)}`;
     document.getElementById("gst-total").textContent = `$${grandGstTotal.toFixed(2)}`;
     document.getElementById("grand-total").textContent = `$${grandTotal.toFixed(2)}`;
